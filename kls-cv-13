@@ -199,176 +199,11 @@
 %% Navy Blue
 	\newcommand{\cnb}{\color{NavyBlue}{}}
 
-%-----------------------------------------------------------------------%
-%		Custom Math	Commands
-%-----------------------------------------------------------------------%
-%% Differential d
-	\newcommand{\dd}{\mbox{d}}
-%% Differential da
-	\newcommand{\da}{\mbox{da}}
-%% Differential dx
-	\newcommand{\dx}{\mbox{dx}}
-%% Differential dy
-	\newcommand{\dy}{\mbox{dy}}	
-%% Differential dm
-	\newcommand{\dm}{\mbox{dm}}
-%% Differntial	dt
-	\newcommand{\dt}{\mbox{dt}}
-%% Imaginary i
-	\newcommand{\im}{\mbox{\textbf{i}}} 
-%% Imaginary j
-	\newcommand{\jm}{\mbox{\textbf{j}}}
-%% Laplace symbol
-	\newcommand{\laplace}{\mathcal{L}}
-%% Laplace inverse symbol
-	\newcommand{\ilaplace}{\mathcal{L} ^{-1}}
-%% Ln
-	\newcommand{\nlog}{\fn{ln}}
-%-----------------------------------------------------------------------%
-%		Text size shortcuts in math enviroments
-%-----------------------------------------------------------------------%
-%%	Tiny
-	\newcommand{\ft}[1]{\mbox{\begin{tiny}#1\end{tiny}}}
-%%	Small
-	\newcommand{\fs}[1]{\mbox{\begin{small}#1\end{small}}}
-%%	Normal	
-	\newcommand{\fn}[1]{\mbox{\begin{normalsize}#1\end{normalsize}}}
-%%	Huge
-	\newcommand{\fh}[1]{\mbox{\begin{huge}#1\end{huge}}}
-%-----------------------------------------------------------------------%
-%		Custom equation spacing in math enviroments
-%-----------------------------------------------------------------------%
-%%	equation -> equation
-	\newcommand{\nexteq}{\qquad \Rightarrow \qquad}
-%%	equation & equation
-	\newcommand{\andeq}{\qquad \& \qquad}
-%-----------------------------------------------------------------------%
-%				commands
-%-----------------------------------------------------------------------%
-%	Makes tables use full textwidth
-	\newcommand{\fw}{@{\extracolsep{\fill}}}
-%-----------------------------------------------------------------------%
-%		Custom Frames - BCLOGO (french)	
-%-----------------------------------------------------------------------%
-	\usepackage[tikz]{bclogo}
-%--------------------------- Blue Frame---------------------------------%
-	\newcommand{\blueframe}[2]{
-				\begin{bclogo}[
-%%			Logo
-			logo =,
-%%			Backround Color
-			couleur = cyan!60!yellow!3,
-%%			Rounded Colors
-			arrondi = .03,
-%%			Shade
-%			ombre=true,
-%%			Border Color
-			couleurBord = blue!30,
-%%			Colored right side bar
-			couleurBarre = cyan!60!yellow!3
-			]
-%%			Heading
-			{#1}
-%%			Content
-			{#2}
-	\end{bclogo} 
-	}
-%-------------------------- Red Frame -----------------------------------%
-	\newcommand{\redframe}[2]{
-				\begin{bclogo}[
-%%			Logo
-			logo = ,
-%%			Backround Color
-			couleur = white!10!red!5!,
-%%			Rounded Colors
-			arrondi = .03,
-%%			Shade
-%			ombre=true,
-%%			Border Color
-			couleurBord = red!70,
-%%			Colored right side bar
-			couleurBarre = white!10!red!5!
-			]
-%%			Heading
-			{#1}
-%%			Content
-			{#2}
-	\end{bclogo} 
-	}
-%-------------------------- Green Frame --------------------------------%
-	\newcommand{\greenframe}[2]{
-				\begin{bclogo}[
-%%			Logo
-			logo = ,
-%%			Backround Color
-			couleur = white!5!green!2!,
-%%			Rounded Colors
-			arrondi = .03,
-%%			Shade
-%			ombre=true,
-%%			Border Color
-			couleurBord = green!100!blue!40!,
-%%			Colored right side bar
-			couleurBarre = white!5!green!2!
-			]
-%%			Heading
-			{#1}
-%%			Content
-			{#2}
-	\end{bclogo} 
-	}
 
 %-----------------------------------------------------------------------%
-%			Tikz Flowchart
+%			Curriculum Vitae
 %-----------------------------------------------------------------------%
-%% START
-\tikzstyle{start}=[
-ellipse, minimum size=10mm,text width=25mm,
-very thick, draw=red!60!black!30,top color=white, bottom color=white!10!black!15!
-,drop shadow
-]
-%% IF
-\tikzstyle{if}=[diamond,minimum size=15mm, text width=12mm,
-very thick,draw=yellow!10!black!50, top color=white,bottom color=yellow,
-drop shadow
-]
-%% LABEL
-\tikzstyle{lbl}=[circle, minimum size=10mm, text width=10mm,
-very thick, draw=red!10!black!50, top color=white,bottom color=white!5!black!10,
-drop shadow
-]
-%% INPUT
-\tikzstyle{input}=[rectangle, rounded corners=1mm, minimum size=15mm, text width=20mm,
-very thick, draw=green!10!black!50, top color=green!3!, bottom color=green!40!,
-drop shadow
-]
-%% OUTPUT
-\tikzstyle{output}=[rectangle, rounded corners=1mm, minimum size=15mm, text width=20mm,
-very thick, draw=green!10!black!50, top color=blue!5!, bottom color=blue!30!,
-drop shadow
-]
-%% SET
-\tikzstyle{set}=[rectangle, rounded corners=1mm, minimum size=15mm, text width=20mm,
-very thick, draw=green!10!black!50, top color=white,bottom color=white!5!black!10,
-drop shadow
-]
-%% DO
-\tikzstyle{do}=[rectangle, rounded corners=1mm, minimum size=15mm, text width=20mm,
-very thick, draw=yellow!10!black!50, top color=white,bottom color=yellow,
-drop shadow
-]
-%% GO
-\tikzstyle{go}=[signal, minimum size=10mm, text width=8mm, very thick,
-draw=yellow!10!black!50, top color=white,bottom color=white!5!black!10,
-drop shadow
-]
-%% LINE
-\tikzstyle{line} = [draw,gray, very thick, -latex']
-
-%-----------------------------------------------------------------------%
-%			Cirriculum Vitae
-%-----------------------------------------------------------------------%
-\newcommand{\heading}[8]{
+\newcommand{\cvheading}[8]{
 	\begin{minipage}{.9\textwidth}
 	\section*{| Curriculum Vitae}
 		\vspace{3mm}
@@ -388,32 +223,22 @@ drop shadow
 	\begin{minipage}{.1\textwidth}
 		\vspace{-10mm}
 		\begin{flushright}
-			\includegraphics[scale=.75]{picture}
+			\includegraphics[scale = .75]{picture}
 		\end{flushright}
 	\end{minipage}
-	}
+}
+%% Add a new section for example "work experience" or education.
+%% \cvsection{Work Experience}
+\newcommand{\cvsection}[1]{
+	\subsection*{\color{Gray}| #1}
 }
 
 %% Add a entry. \entry{Heading}{Year}{Contents}.
 %% Remember to have a line between two entrys.
-\newcommand{\entry}[3]{
+\newcommand{\cventry}[3]{
 	\hspace{-2.5mm}
 	\begin{tabular}{p{.3\textwidth}p{.7\textwidth}}
 		\rule[0ex]{0pt}{2.5ex}{\cmb\textbf{#1:}\newline{\cdg #2}} & {#3}
 	\end{tabular}
 }
-%-----------------------------------------------------------------------%
-%			Start Document
-%-----------------------------------------------------------------------%
-\begin{document}
-%\maketitle
-%\thispagestyle{empty}
-%\pagebreak
-%---------------------- Table of contents ------------------------------%
-%\tableofcontents
-%\thispagestyle{empty}
-%\pagebreak
-%---------------------- Correct pagenumbering---------------------------%
-\setcounter{page}{1}
-
 
