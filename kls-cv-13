@@ -1,0 +1,419 @@
+%%% \input{this file}
+%%%
+%%%	kls (kim's LaTeX settings)
+%%%
+%%% Copyright 2012-2016 Kim Timothy Engh (kimtengh@gmail.com)
+%%%
+%%% This setting file may be distributed and/or modified under
+%%% the conditions of the LaTeX Public Licence version 1.3,
+%%% http://www.latex-project.org/lppl/.
+%%%
+%%% Revision 2.0 
+%-----------------------------------------------------------------------%
+%			Personal and document info
+%-----------------------------------------------------------------------%
+%%	Add name here
+	\newcommand{\NAME}{Kim Timothy Engh}
+%%	Add document title here
+	\newcommand{\TITLE}{Curriculum Vitae}
+%%	Title
+	\title{\TITLE}
+%%	Author
+	\author{\NAME}
+%-----------------------------------------------------------------------%
+%					Document Class
+%-----------------------------------------------------------------------%
+%%	Font size: [*10pt*, '11pt', '12pt]
+%%	Paper size: [*a4paper*, 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper', 'landscape']
+%%	Font ['sans', 'roman']
+%%	Document class {*article*,'moderncv'}
+	\documentclass[a4paper, 10pt]{article}
+	\usepackage{titling}
+%-----------------------------------------------------------------------%
+%					PDF Settings
+%-----------------------------------------------------------------------%
+	\usepackage[pdftex,
+%%	Author
+	pdfauthor={\NAME},
+%%	Title
+	pdftitle={\TITLE},
+%%	Subject
+	pdfsubject={Curriculum Vitae},
+%%	Keywords
+	pdfkeywords={Curriculum Vitae, Mechanic, UiA, Mechatronics, Student, Altas Copco}
+%%	Creator
+%	pdfcreator={\NAME},
+%%	Produser
+	pdfproducer={\NAME},
+%%	Bookmarks ('true',*false*)	
+	bookmarks=true,bookmarks,
+%%	Color links ('true'. *false)
+	colorlinks=false]{hyperref}
+
+%-----------------------------------------------------------------------%
+%			Xcolor - Section setup
+%-----------------------------------------------------------------------%
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage{sectsty}
+%	%\allsectionsfont{\color{blue}\itshape\underline}
+%	\sectionfont{\color{MidnightBlue}\selectfont}
+%	\subsectionfont{\color{MidnightBlue}\selectfont}
+%-----------------------------------------------------------------------%
+%			Hyperlinks
+%-----------------------------------------------------------------------%
+\usepackage[option]{floatflt}
+		\hypersetup{
+%%		Color links ('true', *false*)
+		colorlinks   = true,
+%%		Color of external hyperlinks (*blue*, 'any defined color')
+		urlcolor     = blue, 
+%%		Color of internal hyperlinks (*blue*, 'any defined color')
+		linkcolor    = blue,
+%%		Color of citations (*red*, 'any defined color')
+		citecolor   = red
+		}
+%-----------------------------------------------------------------------%
+%		General Packages and Settings
+%-----------------------------------------------------------------------%
+%%	Font encoding (*T1*)
+	\usepackage[T1]{fontenc}
+%%	Input encoding. utf8 because no
+	\usepackage[utf8]{inputenc}
+%%	Font			
+	\usepackage{lmodern}
+%%	Babel, wordsplit and more (*Norsk*, 'english')					
+	\usepackage[english]{babel}
+%%	Hyphenat, disables wordsplit
+	\usepackage[none]{hyphenat}
+%	Date and Time
+	\usepackage{datetime}									
+%-----------------------------------------------------------------------%
+%			Picture & Graphics enviroments
+%-----------------------------------------------------------------------%
+%%	Graphics interface
+	\usepackage{graphics}						
+	\usepackage{graphicx}
+%%	Wrapfig, flixible picure enviroment
+	\usepackage{wrapfig}
+%%	Vector Drawing
+	\usepackage{pgf}
+		\usepgflibrary{patterns}
+%%	Vector Drawing
+	\usepackage{tikz}
+		\usetikzlibrary{shapes,arrows,patterns,positioning}
+%%	Electrical Diagram Drawing, based on tikz
+%	\usepackage[]{circuitikz,ciunitix}
+%-----------------------------------------------------------------------%
+%				Math packages
+%-----------------------------------------------------------------------%
+%%	Underlining & other text markings
+	\usepackage{ulem}	
+%%	Math typing packages		
+	\usepackage{amssymb}
+	\usepackage{mathtools}
+%%	Left aligning math enviroments
+%	\usepackage[fleqn]{amsmath}					
+%-----------------------------------------------------------------------%
+%				Paper margins
+%-----------------------------------------------------------------------%
+%%	Fullpage, smaller margins
+	\usepackage[]{fullpage}		
+%%		Top margin
+		\setlength{\topmargin}{-10px}
+%%		Width of text
+		\setlength{\textwidth}{470px}
+%%		Hight of text
+		\setlength{\textheight}{750px}
+%%		Oddsode margin
+		\setlength{\oddsidemargin}{-15px}
+%%		Evenside margin
+		\setlength{\evensidemargin}{100px}
+%-----------------------------------------------------------------------%
+%			Enviroment spacing
+%-----------------------------------------------------------------------%
+	\usepackage[none]{hyphenat}
+%%	Section spacing
+	\usepackage{titlesec}
+%%		Verical spacing between sections
+		\titlespacing{\section}{0pt}{0pt}{-2pt}	
+%%		Verical spacing between subsections
+		\titlespacing{\subsection}{0pt}{*1}{*0}
+%%		Verical spacing between subsubsections
+		\titlespacing{\subsubsection}{0pt}{*0}{*0}
+%%		Vertical spacing between footer and text
+		\setlength{\footskip}{0mm}
+%%		Indent spacing
+		\setlength{\parindent}{0mm}
+%%		Specing between paragraphs
+		\setlength{\parskip}{.6\baselineskip}          
+%%		Spacing at the top of equations
+		\setlength{\abovedisplayskip}{.5\baselineskip}
+%%		Spacing at the bottom of equations
+		\setlength{\belowdisplayskip}{.5\baselineskip}
+%%		Spacing at the top of equations (short text line)
+		\setlength{\abovedisplayshortskip}{0mm}
+%%		Spacing at the bottom of equations (short text line)
+		\setlength{\belowdisplayshortskip}{0mm}
+
+%%--------------------------Section stylings------------------------------%
+		\colorlet{section}{MidnightBlue}
+		\titleformat{\section}
+			{\color{section}\normalfont\LARGE\bfseries}
+			{\color{section}\thesection{|}}{1em}{}
+		\titleformat{\subsection}
+			{\color{Gray}\normalfont\Large\bfseries}
+			{\color{Gray}\thesubsection{|}}{1em}{}
+		\titleformat{\subsubsection}
+			{\color{lightgray}\normalfont\large\bfseries}
+			{\color{lightgray}\thesubsubsection{|}}{1em}{}
+		\titleformat{\paragraph}
+			{\color{section}\normalfont\normalsize\bfseries}
+			{\color{section}\theparagraph{|}}{1em}{}
+%-----------------------------------------------------------------------%
+%			Custom Colors
+%-----------------------------------------------------------------------%
+%% Gray
+\definecolor{gray}{rgb}{0.3,0.3,0.3}
+%% Dark Greed
+\definecolor{dark green}{rgb}{0.0,0.6,0.4}
+%-----------------------------------------------------------------------%
+%			Color Shortcuts
+%-----------------------------------------------------------------------%
+%% Gray
+	\newcommand{\cg}{\color{gray}{}}
+%% Red
+	\newcommand{\cb}{\color{red}{}}
+%% Cyan
+	\newcommand{\cc}{\color{cyan}{}}
+%% Purple
+	\newcommand{\cp}{\color{purple}{}}
+%% Dark Green
+	\newcommand{\cdg}{\color{dark green}{}}
+%% Teal
+	\newcommand{\ct}{\color{teal}{}}
+
+%% ----------------------Xcolor-----------------------------------------%
+
+%% Midnight blue
+	\newcommand{\cmb}{\color{MidnightBlue}{}}
+%% Navy Blue
+	\newcommand{\cnb}{\color{NavyBlue}{}}
+
+%-----------------------------------------------------------------------%
+%		Custom Math	Commands
+%-----------------------------------------------------------------------%
+%% Differential d
+	\newcommand{\dd}{\mbox{d}}
+%% Differential da
+	\newcommand{\da}{\mbox{da}}
+%% Differential dx
+	\newcommand{\dx}{\mbox{dx}}
+%% Differential dy
+	\newcommand{\dy}{\mbox{dy}}	
+%% Differential dm
+	\newcommand{\dm}{\mbox{dm}}
+%% Differntial	dt
+	\newcommand{\dt}{\mbox{dt}}
+%% Imaginary i
+	\newcommand{\im}{\mbox{\textbf{i}}} 
+%% Imaginary j
+	\newcommand{\jm}{\mbox{\textbf{j}}}
+%% Laplace symbol
+	\newcommand{\laplace}{\mathcal{L}}
+%% Laplace inverse symbol
+	\newcommand{\ilaplace}{\mathcal{L} ^{-1}}
+%% Ln
+	\newcommand{\nlog}{\fn{ln}}
+%-----------------------------------------------------------------------%
+%		Text size shortcuts in math enviroments
+%-----------------------------------------------------------------------%
+%%	Tiny
+	\newcommand{\ft}[1]{\mbox{\begin{tiny}#1\end{tiny}}}
+%%	Small
+	\newcommand{\fs}[1]{\mbox{\begin{small}#1\end{small}}}
+%%	Normal	
+	\newcommand{\fn}[1]{\mbox{\begin{normalsize}#1\end{normalsize}}}
+%%	Huge
+	\newcommand{\fh}[1]{\mbox{\begin{huge}#1\end{huge}}}
+%-----------------------------------------------------------------------%
+%		Custom equation spacing in math enviroments
+%-----------------------------------------------------------------------%
+%%	equation -> equation
+	\newcommand{\nexteq}{\qquad \Rightarrow \qquad}
+%%	equation & equation
+	\newcommand{\andeq}{\qquad \& \qquad}
+%-----------------------------------------------------------------------%
+%				commands
+%-----------------------------------------------------------------------%
+%	Makes tables use full textwidth
+	\newcommand{\fw}{@{\extracolsep{\fill}}}
+%-----------------------------------------------------------------------%
+%		Custom Frames - BCLOGO (french)	
+%-----------------------------------------------------------------------%
+	\usepackage[tikz]{bclogo}
+%--------------------------- Blue Frame---------------------------------%
+	\newcommand{\blueframe}[2]{
+				\begin{bclogo}[
+%%			Logo
+			logo =,
+%%			Backround Color
+			couleur = cyan!60!yellow!3,
+%%			Rounded Colors
+			arrondi = .03,
+%%			Shade
+%			ombre=true,
+%%			Border Color
+			couleurBord = blue!30,
+%%			Colored right side bar
+			couleurBarre = cyan!60!yellow!3
+			]
+%%			Heading
+			{#1}
+%%			Content
+			{#2}
+	\end{bclogo} 
+	}
+%-------------------------- Red Frame -----------------------------------%
+	\newcommand{\redframe}[2]{
+				\begin{bclogo}[
+%%			Logo
+			logo = ,
+%%			Backround Color
+			couleur = white!10!red!5!,
+%%			Rounded Colors
+			arrondi = .03,
+%%			Shade
+%			ombre=true,
+%%			Border Color
+			couleurBord = red!70,
+%%			Colored right side bar
+			couleurBarre = white!10!red!5!
+			]
+%%			Heading
+			{#1}
+%%			Content
+			{#2}
+	\end{bclogo} 
+	}
+%-------------------------- Green Frame --------------------------------%
+	\newcommand{\greenframe}[2]{
+				\begin{bclogo}[
+%%			Logo
+			logo = ,
+%%			Backround Color
+			couleur = white!5!green!2!,
+%%			Rounded Colors
+			arrondi = .03,
+%%			Shade
+%			ombre=true,
+%%			Border Color
+			couleurBord = green!100!blue!40!,
+%%			Colored right side bar
+			couleurBarre = white!5!green!2!
+			]
+%%			Heading
+			{#1}
+%%			Content
+			{#2}
+	\end{bclogo} 
+	}
+
+%-----------------------------------------------------------------------%
+%			Tikz Flowchart
+%-----------------------------------------------------------------------%
+%% START
+\tikzstyle{start}=[
+ellipse, minimum size=10mm,text width=25mm,
+very thick, draw=red!60!black!30,top color=white, bottom color=white!10!black!15!
+,drop shadow
+]
+%% IF
+\tikzstyle{if}=[diamond,minimum size=15mm, text width=12mm,
+very thick,draw=yellow!10!black!50, top color=white,bottom color=yellow,
+drop shadow
+]
+%% LABEL
+\tikzstyle{lbl}=[circle, minimum size=10mm, text width=10mm,
+very thick, draw=red!10!black!50, top color=white,bottom color=white!5!black!10,
+drop shadow
+]
+%% INPUT
+\tikzstyle{input}=[rectangle, rounded corners=1mm, minimum size=15mm, text width=20mm,
+very thick, draw=green!10!black!50, top color=green!3!, bottom color=green!40!,
+drop shadow
+]
+%% OUTPUT
+\tikzstyle{output}=[rectangle, rounded corners=1mm, minimum size=15mm, text width=20mm,
+very thick, draw=green!10!black!50, top color=blue!5!, bottom color=blue!30!,
+drop shadow
+]
+%% SET
+\tikzstyle{set}=[rectangle, rounded corners=1mm, minimum size=15mm, text width=20mm,
+very thick, draw=green!10!black!50, top color=white,bottom color=white!5!black!10,
+drop shadow
+]
+%% DO
+\tikzstyle{do}=[rectangle, rounded corners=1mm, minimum size=15mm, text width=20mm,
+very thick, draw=yellow!10!black!50, top color=white,bottom color=yellow,
+drop shadow
+]
+%% GO
+\tikzstyle{go}=[signal, minimum size=10mm, text width=8mm, very thick,
+draw=yellow!10!black!50, top color=white,bottom color=white!5!black!10,
+drop shadow
+]
+%% LINE
+\tikzstyle{line} = [draw,gray, very thick, -latex']
+
+%-----------------------------------------------------------------------%
+%			Cirriculum Vitae
+%-----------------------------------------------------------------------%
+\newcommand{\heading}[8]{
+	\begin{minipage}{.9\textwidth}
+	\section*{| Curriculum Vitae}
+		\vspace{3mm}
+		\hspace{-4.5mm}
+		\begin{tabular}{ll}
+			\begin{tabular}{ll}
+				{\cmb \textbf{Name:}} & \textbf{#1}\\
+				{\cmb \textbf{E-mail:}} & #2\\
+				{\cmb \textbf{Cell Phone:}} & {\cg(#3)} #4
+			\end{tabular}
+			&
+			\begin{tabular}{lp{6cm}}
+				{\cmb \textbf{Address:}} &#5,\newline #6 #7,\newline #8
+			\end{tabular}
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{.1\textwidth}
+		\vspace{-10mm}
+		\begin{flushright}
+			\includegraphics[scale=.75]{picture}
+		\end{flushright}
+	\end{minipage}
+	}
+}
+
+%% Add a entry. \entry{Heading}{Year}{Contents}.
+%% Remember to have a line between two entrys.
+\newcommand{\entry}[3]{
+	\hspace{-2.5mm}
+	\begin{tabular}{p{.3\textwidth}p{.7\textwidth}}
+		\rule[0ex]{0pt}{2.5ex}{\cmb\textbf{#1:}\newline{\cdg #2}} & {#3}
+	\end{tabular}
+}
+%-----------------------------------------------------------------------%
+%			Start Document
+%-----------------------------------------------------------------------%
+\begin{document}
+%\maketitle
+%\thispagestyle{empty}
+%\pagebreak
+%---------------------- Table of contents ------------------------------%
+%\tableofcontents
+%\thispagestyle{empty}
+%\pagebreak
+%---------------------- Correct pagenumbering---------------------------%
+\setcounter{page}{1}
+
+
